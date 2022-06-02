@@ -20,12 +20,21 @@ export default function App() {
         <Text style={styles.sectionTitle}>LAB1-P4  Tareas</Text>
 
         <View style={styles.items}>
-          {/* This is where the tasks will go! */}
-
-          <Task text={'Task 1 - ERS'} />
+          {/* TASKS */}
+           {/* <Task text={'Task 1 - ERS'} />
           <Task text={'Task 2 - Informe disennio'} />
-          <Task text={'Task 1 - LAB1'} />
-      
+          <Task text={'Task 1 - LAB1'} /> */}
+       
+          {
+             taskItems.map((item, index) => {
+              return (
+                <TouchableOpacity key={index}  onPress={() => completeTask(index)}>
+                  <Task text={item} /> 
+                </TouchableOpacity>
+              )
+            })
+          
+        }
 
         </View>
       </View>
